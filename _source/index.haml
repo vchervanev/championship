@@ -6,4 +6,11 @@
     %title X
   %body(ng-app="Championship")
     %div(ng-controller="ChampionshipCtrl")
+      %table
+        %tr
+          %td x
+          %td(ng-repeat="player in input.players") {{ player }}
+        %tr(ng-repeat="player in input.players")
+          %td {{ player }}
+          %td(ng-repeat="player in input.players") o
       %pre {{ input | json }}

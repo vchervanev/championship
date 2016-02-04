@@ -7,6 +7,16 @@
   </head>
   <body ng-app='Championship'>
     <div ng-controller='ChampionshipCtrl'>
+      <table>
+        <tr>
+          <td>x</td>
+          <td ng-repeat='player in input.players'>{{ player }}</td>
+        </tr>
+        <tr ng-repeat='player in input.players'>
+          <td>{{ player }}</td>
+          <td ng-repeat='player in input.players'>o</td>
+        </tr>
+      </table>
       <pre>{{ input | json }}</pre>
     </div>
   </body>
