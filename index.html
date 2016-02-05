@@ -12,9 +12,9 @@
           <td>x</td>
           <td ng-repeat='player in input.players'>{{ player }}</td>
         </tr>
-        <tr ng-repeat='player in input.players'>
-          <td>{{ player }}</td>
-          <td ng-repeat='player in input.players'>o</td>
+        <tr ng-repeat='playerA in input.players'>
+          <td>{{ playerA }}</td>
+          <td ng-repeat='playerB in input.players'>{{input.matrix[playerA][playerB]}}</td>
         </tr>
       </table>
       <pre>{{ input | json }}</pre>

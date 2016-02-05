@@ -2,25 +2,24 @@
 ---
 (function(){
     var players = [];
-    var ids = {};
-    var games = [];
-    {% for player in site.data.players %}
+    var matrix = {};
+
+    {% assign players = site.data.players | sort %}
+    {% for player in players %}
     players.push("{{ player }}");
-    ids["{{ player }}"] = {{forloop.index0}};
+    matrix["{{ player }}"] = {};
     {% endfor %}
 
+    var parseGame = function(p1, s1, p2, s2){
+        matrix[p1][p2] = s1;
+        matrix[p2][p1] = s2;
+    };
+
     {% for game in site.data.games %}
-    var info = [];
-    {% for participant in game %}
-    info.push({
-        player_id: ids["{{participant[0]}}"],
-        score: {{participant[1]}}
-    });
-    {% endfor %}
-    games.push(info);
+    parseGame({% for player in game %}"{{player[0]}}", {{player[1]}}{% if forloop.index0 == 0%}, {% endif %}{% endfor %});
     {% endfor %}
 
     angular
         .module('Championship')
-        .constant('INPUT', {players: players, ids: ids, games: games});
+        .constant('INPUT', {players: players, matrix: matrix});
 })();
