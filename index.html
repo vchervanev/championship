@@ -10,14 +10,29 @@
       <table>
         <tr>
           <td>x</td>
-          <td ng-repeat='player in input.players'>{{ player }}</td>
+          <th ng-repeat='player in input.players'>{{ player }}</th>
         </tr>
         <tr ng-repeat='playerA in input.players'>
           <td>{{ playerA }}</td>
           <td ng-repeat='playerB in input.players'>{{input.matrix[playerA][playerB]}}</td>
         </tr>
       </table>
-      <pre>{{ input | json }}</pre>
+      <table>
+        <tr>
+          <th>Player</th>
+          <th>Play</th>
+          <th>Win</th>
+          <th>Loss</th>
+          <th>Score</th>
+          <th>Miss</th>
+        </tr>
+        <tr ng-repeat='player in input.players'>
+          <td>{{ player }}</td>
+          <td ng-repeat="param in ['played', 'win', 'loss', 'score', 'miss']">
+            {{ input.stats[player][param]}}
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>

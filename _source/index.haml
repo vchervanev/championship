@@ -9,8 +9,20 @@
       %table
         %tr
           %td x
-          %td(ng-repeat="player in input.players") {{ player }}
+          %th(ng-repeat="player in input.players") {{ player }}
         %tr(ng-repeat="playerA in input.players")
           %td {{ playerA }}
           %td(ng-repeat="playerB in input.players") {{input.matrix[playerA][playerB]}}
-      %pre {{ input | json }}
+
+      %table
+        %tr
+          %th Player
+          %th Play
+          %th Win
+          %th Loss
+          %th Score
+          %th Miss
+        %tr(ng-repeat="player in input.players")
+          %td {{ player }}
+          %td(ng-repeat="param in ['played', 'win', 'loss', 'score', 'miss']")
+            {{ input.stats[player][param]}}
