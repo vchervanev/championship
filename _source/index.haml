@@ -3,26 +3,27 @@
     %script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js")
     %script(src="js/app.js")
     %script(src="js/data.js")
+    %link(rel="stylesheet" type="text/css" href="css/styles.css")
     %title Test
   %body(ng-app="Championship")
     %div(ng-controller="ChampionshipCtrl")
       %table
         %tr
-          %td x
+          %td
           %th(ng-repeat="player in input.players") {{ player }}
         %tr(ng-repeat="playerA in input.players")
-          %td {{ playerA }}
-          %td(ng-repeat="playerB in input.players") {{input.matrix[playerA][playerB]}}
+          %td.row-header {{ playerA }}
+          %td.square(ng-repeat="playerB in input.players" ng-class="cellStyle(playerA, playerB)") {{input.matrix[playerA][playerB]}}
 
       %table
         %tr
-          %th Player
+          %td
           %th Play
           %th Win
           %th Loss
           %th Score
           %th Miss
         %tr(ng-repeat="player in input.players")
-          %td {{ player }}
-          %td(ng-repeat="param in ['played', 'win', 'loss', 'score', 'miss']")
+          %td.row-header {{ player }}
+          %td.square(ng-repeat="param in ['played', 'win', 'loss', 'score', 'miss']")
             {{ input.stats[player][param]}}
