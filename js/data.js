@@ -11,6 +11,9 @@
     {% endfor %}
 
     var parseGame = function(p1, s1, p2, s2){
+        if (matrix[p1] == null || matrix[p2] == null){
+            return;
+        }
         matrix[p1][p2] = s1;
         matrix[p2][p1] = s2;
     };
