@@ -1,9 +1,3 @@
 ---
-- PlayerA: 3
-  PlayerB: 1
-- PlayerB: 2
-  PlayerC: 1
-- PlayerA: 0
-  PlayerD: 3
-- Unknown: 3
-  PlayerD: 2
+- Konnov: 2
+  Sidorov: 0
