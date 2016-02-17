@@ -9,7 +9,7 @@
     %div(ng-controller="ChampionshipCtrl")
       %table
         %tr
-          %td
+          %td.row-header
           %th(ng-repeat="player in input.players") {{ player }}
         %tr(ng-repeat="playerA in input.players")
           %td.row-header {{ playerA }}

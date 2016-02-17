@@ -5,6 +5,7 @@ $size: 60px;
 table {
   border-collapse:collapse;
   table-layout: fixed;
+  width: 500px;
   td {
     font-size: 20px;
   }
@@ -14,23 +15,25 @@ table {
   width: 150px;
   text-align:right;
   padding-right: 10px;
+  font-size: 18px;
+
 
 }
 .square {
   border: lightgray solid 1px;
   height: $size;
   width: $size;
-  overflow: hidden;
   text-align:center;
-  vertical-align:middle;}
+  vertical-align:middle;
+}
 
 th {
   white-space: nowrap;
   transform:
     rotate(-45deg);
-  height: 100px;
+  height: 80px;
   width: $size;
-  overflow: hidden;
+  overflow: visible;
   word-wrap:break-word;
   text-align:center;
   vertical-align:middle;
