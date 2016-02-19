@@ -1,6 +1,6 @@
 ---
 ---
-$size: 50px;
+$size: 35px;
 
 table {
   border-collapse:collapse;
@@ -20,11 +20,12 @@ table {
 
 }
 .square {
-  border: lightgray solid 1px;
+  border: gray solid 1px;
   height: $size;
   width: $size;
   text-align:center;
   vertical-align:middle;
+  font-family: courier;
 }
 
 th {
