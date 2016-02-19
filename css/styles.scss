@@ -43,3 +43,11 @@ th {
 .dark {
   background-color: lightgray;
 }
+
+tr:hover td.square {
+    background-color: #EFEFFF;
+}
+
+tr:hover td.square.dark {
+    background-color: lightgray;
+}
