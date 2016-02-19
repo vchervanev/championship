@@ -11,11 +11,15 @@
         %tr
           %td.row-header
           %th(ng-repeat="player in input.players") {{ player }}
+          %th(ng-repeat="column in ['', 'Play', 'Win', 'Loss', 'Score', 'Miss']") {{ column }}
         %tr(ng-repeat="playerA in input.players")
           %td.row-header {{ playerA }}
           %td.square(ng-repeat="playerB in input.players" ng-class="cellStyle(playerA, playerB)") {{input.matrix[playerA][playerB]}}
+          %td
+          %td.square(ng-repeat="param in ['played', 'win', 'loss', 'score', 'miss']")
+            {{ input.stats[playerA][param]}}
 
-      %table
+      %table(ng-show="false")
         %tr
           %td
           %th Play
