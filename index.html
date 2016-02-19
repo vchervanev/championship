@@ -12,13 +12,13 @@
         <tr>
           <td class='row-header'></td>
           <th ng-repeat='player in input.players'>{{ player }}</th>
-          <th ng-repeat="column in ['', 'Play', 'Win', 'Loss', 'Score', 'Miss']">{{ column }}</th>
+          <th ng-repeat="column in ['', 'Play', 'Win', 'Loss', 'Score', 'Miss', 'Rating']">{{ column }}</th>
         </tr>
         <tr ng-repeat='playerA in input.players'>
           <td class='row-header'>{{ playerA }}</td>
           <td class='square' ng-class='cellStyle(playerA, playerB)' ng-repeat='playerB in input.players'>{{input.matrix[playerA][playerB]}}</td>
           <td></td>
-          <td class='square' ng-repeat="param in ['played', 'win', 'loss', 'score', 'miss']">
+          <td class='square' ng-repeat="param in ['played', 'win', 'loss', 'score', 'miss', 'rating']">
             {{ input.stats[playerA][param]}}
           </td>
         </tr>

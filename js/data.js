@@ -9,7 +9,7 @@
     {% for player in players %}
     players.push("{{ player }}");
     matrix["{{ player }}"] = {};
-    stats["{{ player }}"] = { played: 0, win: 0, loss: 0, score: 0, miss: 0 };
+    stats["{{ player }}"] = { played: 0, win: 0, loss: 0, score: 0, miss: 0, rating: 0 };
 
     {% endfor %}
 
@@ -31,10 +31,14 @@
 
         if (s1 > s2) {
             stats[p1].win++;
+            stats[p1].rating += s2 == 0 ? 3 : 2
             stats[p2].loss++;
+            stats[p2].rating += s2 == 0 ? 0 : 1
         } else {
             stats[p2].win++;
+            stats[p2].rating += s1 == 0 ? 3 : 2
             stats[p1].loss++;
+            stats[p1].rating += s1 == 0 ? 0 : 1
         }
     };
 
