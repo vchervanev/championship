@@ -44,10 +44,10 @@ th {
   background-color: lightgray;
 }
 
-tr:hover td.square {
+.highlight {
     background-color: #EFEFFF;
 }
 
-tr:hover td.square.dark {
-    background-color: lightgray;
+.vs-highlight {
+    background-color: #33EFFF;
 }

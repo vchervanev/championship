@@ -16,9 +16,11 @@
         </tr>
         <tr ng-repeat='playerA in input.players'>
           <td class='row-header'>{{ playerA }}</td>
-          <td class='square' ng-class='cellStyle(playerA, playerB)' ng-repeat='playerB in input.players'>{{input.matrix[playerA][playerB]}}</td>
+          <td class='square' ng-class='cellStyle(playerA, playerB)' ng-mouseleave='mouseOver()' ng-mouseover='mouseOver(playerA, playerB)' ng-repeat='playerB in input.players'>
+            {{input.matrix[playerA][playerB]}}
+          </td>
           <td></td>
-          <td class='square' ng-repeat="param in ['played', 'win', 'loss', 'score', 'miss', 'rating']">
+          <td class='square' ng-class='cellStyle(playerA)' ng-mouseleave='mouseOver()' ng-mouseover='mouseOver(playerA, playerA)' ng-repeat="param in ['played', 'win', 'loss', 'score', 'miss', 'rating']">
             {{ input.stats[playerA][param]}}
           </td>
         </tr>
